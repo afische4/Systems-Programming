@@ -1,0 +1,78 @@
+ifconfig --> shows a bunch of stuff like IP address, wifi, interface, ether is mac
+hardware address
+  --> first 3 blocks are company server/manufacturer ID
+
+phones also have mac address associated with wireless eter whatever
+  --> how places track you, knows where you connected to wifi because it uses
+      you mac address
+      --> NOW the can't do that it becomes spoofed by OS or make up new
+          mac adress every time
+mac addr tied to interface
+LO=loopback device (no ethernet or hardware addr)
+  -->not hardware. virtual device on every machine that is network enabled
+    read same info back off loopback device when reconnecting or whatever
+mtu = max packet size allowed on interface ~~ 1.5 kb for example
+  --> a lot bigger on Loopback device, casuses problems because different sizes
+      you can manually edit loopback to be lower/same as the other thing
+You can open a socket and 'Listen' on particular port
+  when listening on one port you are listening on only that port not another
+EX)
+netcat -l 9999 #-l means listen (w/out it means connect to)
+
+netcat localhost 9999 (on loopback device)
+hi
+#can send things over to another terminal or whatever
+
+bottom line = listen on a port connect to a port
+if i give it explicitly a device I am binding the interface, so listening
+on that port number bound to that interface. can specify localhost or not, if
+not it will open on all of them
+
+sudo tcpdump #prints all packets associated with interface
+  #have to have permission to read all the packets
+  #can be detected by OIT, can read everything off the network
+  #OS tcpstack is detectable by ND OIT so don't try on school computer
+sudo tcpdump -X icmp
+  #display contents of packets (sudo allows you to run priveledged programs)
+  #icmp are ping packets ex) ping google.com
+sudo tcpdump -i lo port 9999 #listing on loopback interface #called handshake
+                              #same as socket.connect "handshake"
+(on another term) nc -l 9999
+                  hi
+                  hi
+
+#when you connect also opening a port. 3 terminals 1 for listen, one for inter
+face, one for tcpdump
+
+nc localhost 9999 < temp/h.jpg
+nc -l 9999
+
+tcpdumb see size of packets (mtu of loopback device)
+
+2 sides to connectio, listener and connector, sends packets back and forth,
+  connecting to listener, so port open on both sides of connection,
+    but usually only talk about listener side. # of ports determined by firmware
+    managed by hardware
+
+tcpdump opens network device and prints every packet (and contents) going by
+
+restriction on max ports 65000 arbitrary determined by network that that was enough
+
+When one protocol's packets or frames get encapsulated within another protocol 
+there is an overall increase in the frame size. The encapsulation that takes 
+place adds protocol header overhead, and thus the systems sending 1500-byte 
+packets across the network cannot be sent in-tack to the other side. 
+Some nodes that send 1500 byte packets into the DMVPN and subsequently 
+receive an ICMPv4 “packet too big” message from the router may choose to 
+ignore this.
+
+One method to test and detect a reduced MTU size is to use a ping with 
+a large packet size. Here are some examples of how to do this.
+
+C:\Users\ScottHogg> ping -l 1500 192.168.10.1
+
+OR
+
+~$ping -s 1500 -M do 192.168.10.1
+
+#ALL THIS WILL BE ON TEST

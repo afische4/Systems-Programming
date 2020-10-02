@@ -1,0 +1,40 @@
+#1 check cores ex) 12
+    going to get better not quite double performance with multiple threads
+    beware of hardware contraints when running threads
+    first is number of cores, the second is something else (look up)
+
+find all matches, gives back matches 1 at a time
+time python3 m2_pw.py -t 2 -r '[a-z]{39}' -p xyz
+
+# 1)  generate a pswd candidate for each thread you are going to run
+      ex) if you running 4 threads, do this 4 times to get 4 candidates
+
+  2)  call remote function (ray)
+      a func in python that you have asked ray the library to make parallizable
+      call 4 times (# of threads)
+      give it a pswd cadidate each time you call it, and encrypted real pswd(target pswd)
+      see if same, return T or F
+  3)  get the result (t or f) from the remote functions and check if any is true
+      if it is true then you are good that's it,
+      but if False (no pswd match for any) start process over again
+
+call remote func just the # of times I want and dont call anymore until I get the result back
+exrex==give it a regex and it will give back a generator:
+  for pswdcandidate in _____:
+    generate #threads of them
+    generator is acting like a list (give me the next of something)
+
+Notes on RAY
+  import ray
+  ray.init() #if slow try dif stud machine
+  import time
+  @ray.remote
+  #rewatch section where he describes trick ray is using (ON EXAM)
+  def foo():
+    time.sleep(5)
+  foo() #error
+  f1 = foo.remote()
+  f2 = foo.remote()
+  ray.get(f1)
+  ray.get(f2)
+

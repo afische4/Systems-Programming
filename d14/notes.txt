@@ -1,0 +1,94 @@
+fred or something ?? 
+processes running 3 at same time for the server thing
+can get better performance and aboid queeuing + more processes
+so mult things at same time using 
+* think of program like a room, all the data in the program is 
+  like stuff in the room that you can use, like dinodata or whatever.
+  * also have socket connection (like a cell phone)
+  * diff /b/ thread and process:
+    my job is to do everything in the room/program
+    * a thread is like creating another person to use same stuff in 
+      room and do program 
+    * a process is a completely new room with another person doing stuff
+      in that room
+    * thread: new person same room
+    * process: new room, new person
+    * benefit to thread: a lot more lightweight, no copies, communcate easily
+    * downside: results in problems if ppl try to write to same thing
+              at same time, sharing same memory space. Like
+              two cooks trying to use the same utensils, stovetops
+    * processes: harder to communicate between processes, but not sharing
+                 the same memory
+* socket is like picking up phone and creating a new phone that you
+  can't answer, its just queued up, but we want a set up so I can
+  answer the phone and hand it to another person. 
+* Want: I pick up phones and hand then to people in my room. 
+        so create more threads in same space. don't touch anything just
+        talk on the phone. 
+* Good news: this is super easy to do in python (see below)
+
+import threading
+# put other thing in a function
+th = threading.Thread(target=handle_call, args=(c, addr))
+th.start()
+# # handle_call() #this is the old function commented out
+#job is run handle_call
+
+
+* Bad News: in python, this doesn't actually help in performance in 
+            python, it behaves as if mult things happen at once,
+            but in reality two things cannot happen at once,
+            two threads cannot do something at the same time.
+            Analogy: People on phones taking turns, nothing
+            happening at the same time.Like passing a baton around.
+            Person with baton can do something
+      * called GIL "Global Interpreter Lock"
+        means there is a global lock on every python process room
+        so only one thing can do soemthing at a time
+      * bottom line: why can't we allow two things happen at once
+      like in other prog languages?
+      memory management system in python (system underliying python) is 
+      not thread safe. Doesn't have checks and balances.
+      Rest of python features rely on this mem management system being
+      the way that it is. so stuck with this environment
+SO Whaat?
+  * if python replaced with another language (like PERL was), it is 
+    probably bc of the mem mngmt system thing and not being able to
+    increase performance with threads.
+  * when python invented, a lot of processes relied on wirting out to 
+    harddrive discs, TODAY: harddrive 210 mgbytes/sec. .02s to read dinodat (fast)
+    BACKTHEN: 42 mgbytes, transfer speed 1.35 mg/sec, seat time 17 ms
+              max altitude of 5k/6k ft (fun fact)
+              if not enough air, head scratches disc that why altitude thing
+              read 4 mgbytes takes 3 seconds. (slow)
+     * many tasks bound by I/O
+     * 3/5 execution time waiting on harddrive to write
+     * why on Earth would python designers be ok with thread UNsafe??
+     * way better w mult CPUs, mult threads, etc... on our laptops and things
+     * why is considered acceptable?: consider prog w 2 tasks, short and long
+        * read little bit, then write from disc (short task S, CPU bound)
+        * write back out to disc (I/O process, L (long)) 2x amount of time as s
+            * time CPU could be running but isnt
+        * do: S, S, L, S, S, L, S, S, L, S, S, L
+          * takes 12 time units
+          * w/ GIL enabled, can still make another thread
+            * S, S, L, ....
+            * 5 ??
+            * makes senese ?? sorry not listening 
+          *idk what he is diong, w/out GIL can do SS right away, but wait on IO
+          * meanwhile with threads 
+          * IDK whatever it's still 8 time units, haven't saved anything.
+            BC all time wasted is basically the same in both, that is why
+            GIL was permitted, bc not saving anything, only 1 run at time save
+            what you can wth thread on the I/O bound
+            everything else created witht eh GIL so depends on that system
+   next he is gonna hsow workloads how to make modern and why problem then ways around it
+
+DAILY TODAY:
+  * first part of m2b (there are 3 total)
+  * he is being kind of facetious with the procrastinating comments
+
+
+
+
+      

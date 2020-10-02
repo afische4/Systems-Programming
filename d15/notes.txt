@@ -1,0 +1,51 @@
+Class CovDemoLib:
+  def primeq(self, num):
+    if num > 1:
+      for i in range(2, num):
+        if (num % i ) == 0:
+          return False
+      return True
+    else:
+      return False
+
+
+
+from covdemolib ipmort CovDemoLib
+import sys
+
+num = int(sys.argv[1])
+
+cdl = CovDemoLib()
+#is it prime?
+cdl.primeq(num)
+
+print(p)
+
+$ covdemocls.py 10
+False
+$ covdemocls.py 67
+True
+test coverage = percentage program executed
+means % statements in prog which was executed
+coverage run covdemcls.py 67
+ls -alh
+coverage report
+...
+...
+...
+etc
+coverage html
+cd htmlcov
+run these files
+or download this folder and open up in web browser so it looks nice
+lynx index.html
+actually just open in a browser
+if something is red then it wasn't tested
+report shows what lines ran and what lines didn't run
+to open in browser firefox htmlcov//something...?
+
+#he will upload covtest file
+library called unittest
+all identical tst cases only difference is input
+get 100% coverage
+

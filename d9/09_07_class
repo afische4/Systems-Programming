@@ -1,0 +1,46 @@
+import re #regex module in python
+import sys #readng in from command line
+import pdb
+
+# could do if sys.argv < 3 you know 
+datfile = sys.argv[1] # same as $1 in bash
+
+#open a file 
+f = open(datfile, 'r') #any file
+
+#try:
+#bad^^
+
+#initialize array
+datafram = list()
+#another way
+headers = ['f', 'g', 'e'] #see his for actual example lol
+
+errors=0
+
+for line in f  #this goes through each line in the file
+  (mid, nameyear, genres) = line.split('::') #set vars 
+  #try and except block
+  #if you want to know does a string match:
+    if(re.search(regex, nameyear, re.IGNORECASE)): #do this for hw tonight
+      print()
+  
+  try:
+    x = re.search('([a-zA-Z]+)\s\(([0-9]{4})\)', nameyear)
+    name = x.group(1)
+    year = x.gorup(2)
+  except AttripbuteError as ex:
+    pass # this means the data is thrown out we don't print it
+    #another common one is:
+    # errors += 1 this would say how many wrong entries there are 
+  #this si still within the for loop 
+  if
+  pdb.set_trace() #this runs the program and once it hits the set trace it drops
+  #you to a python console for that line in f
+
+  print(name, year)
+f.close() #closes the file
+
+#badvv
+#except Exception as ex:
+  #pass

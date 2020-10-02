@@ -1,0 +1,61 @@
+cat dinosaur.dat | awk -v FS='\t' -v OFS='\t' '{print $6, $20, $21, $22, $23}' | sort -t$'\t' -k2,2hr | head -n 5
+Hadrosauridae indet.  89.039169 CA  Nunavut Axel Heiberg Island
+Aves indet. 82.599998 CA  Nunavut 
+Clangula hyemalis 82.599998 CA  Nunavut 
+Branta leucopsis  82.125000 GL    
+Calidris canutus  82.125000 GL
+
+cat zipcodes.dat | sort -t$';' -k2,3 | head -n 5
+#sorts from 2 2 3
+cat zipcodes.dat | sort -t$';' -k2,2 -k4,4 | head -n 5
+
+cat zipcodes.dat | sort -t$';' -k2,3 -k4,4hr | head -n 5
+#sorted by city then latitude last to first
+# hr means human readable\
+
+#you can move these things aroung
+
+cat zipcodes.dat | sort -t$';' -k3,3 -k2,2 | head -n 5
+
+
+#parameter parsing
+
+while[$# -gt 0]; do
+  case $1 in    #consuming things on parameter list
+      -h) usage 0 ;;
+      -g) echo "mario" ;;
+      -p) shift: echo "player $1" ;;
+      *)  echo $1
+  esac
+  
+  shift
+done
+#to run:
+
+bash test.sh -g -p luigi
+#QUOTES
+VAR=5
+echo "$VAR" #when you put a single quote around a string it won't 
+#know to process the variable
+echo '$VAR'
+ESCAPE THR $ like this: \$1
+
+VAR="zipcode"
+acho "$(#VAR)" 
+echo ${VAR:3:2}""
+for i in $(seq 0 $(#VAR)): do#MEANS LENGTH OF VAR
+  echo "$i $(VAR:i:1)"
+  case varting in
+    q);;
+    e);;
+  esac
+done
+
+
+
+
+
+
+
+
+
