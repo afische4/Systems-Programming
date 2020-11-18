@@ -1,0 +1,14 @@
+ 03:05:57 up 4 days, 16:59,  3 users,  load average: 0.00, 0.01, 0.05
+CASE 1 & 2:
+threads		encrypted password			match	regex		time(s)
+  1		2747f01cd0b445b2a488d8391640a7a4	aabbb	[a-z]{5}	39.48
+threads		encrypted password			match	regex		time(s)
+  1		8010fd0f87d3aaa0ea48aa78948c081e	cmc	[a-z]{3}	63.86
+threads		encrypted password			match	regex		time(s)
+  2		2747f01cd0b445b2a488d8391640a7a4	aabbb	[a-z]{5}	34.93
+threads		encrypted password			match	regex		time(s)
+  2		8010fd0f87d3aaa0ea48aa78948c081e	cmc	[a-z]{3}	38.16
+threads		encrypted password			match	regex		time(s)
+  4		2747f01cd0b445b2a488d8391640a7a4	aabbb	[a-z]{5}	33.37
+threads		encrypted password			match	regex		time(s)
+  4		8010fd0f87d3aaa0ea48aa78948c081e	cmc	[a-z]{3}	23.45

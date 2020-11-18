@@ -1,0 +1,39 @@
+top 5 most-common passwords
+  10654 
+   1667 123456
+    780 password
+    437 welcome
+    333 ninja
+
+top 5 most-common number sequences of length 2
+  13917 23
+   7338 12
+   6206 11
+   5604 01
+   5291 00
+
+top 5 most-common words of length 6
+    444 qwerty
+    417 monkey
+    363 writer
+    284 jordan
+    278 shadow
+
+top 5 most-common of pattern letters-numbers-letters (out of 18672 total)
+     79 ca55ablanc
+     54 thomas09a
+     46 passw0rd
+     42 q1w2e3r4
+     28 a1b2c3d4
+
+number of total (non-unique) passwords that match pattern: my NUM XYZ
+    192 
+
+number of occurrences of number sequences of various lengths
+length num_occur
+2 218702
+3 133863
+4 96741
+5 49422
+6 37565
+7 16549

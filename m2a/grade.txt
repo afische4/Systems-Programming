@@ -1,0 +1,4 @@
+17/20
+-1 for plot dino in mapmaker
+-1 for getcolor in mapmaker
+-1 for mapmaker test fail

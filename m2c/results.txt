@@ -1,15 +1,25 @@
- 00:08:53 up 25 days, 13:47,  2 users,  load average: 0.42, 0.51, 0.28
-Using 4 threads it took 6.05 seconds to find (Anna){1,8} match for 97a9d330e236c8d067f01da1894a5438 as Anna
-Using 2 threads it took 2.77 seconds to find (Anna){1,8} match for 97a9d330e236c8d067f01da1894a5438 as Anna
-Using 8 threads it took 2.79 seconds to find (Anna){1,8} match for 97a9d330e236c8d067f01da1894a5438 as Anna
-Using 8 threads it took 2.7 seconds to find (Anna){1,32} match for 97a9d330e236c8d067f01da1894a5438 as Anna
-Using 6 threads it took 3.21 seconds to find [a-zA-Z]{1} match for 97a9d330e236c8d067f01da1894a5438 as No Matches
-Using 6 threads it took 4.65 seconds to find [a-zA-Z]{1} match for 7fc56270e7a70fa81a5935b72eacbe29 as No Matches
-Using 4 threads it took 15.57 seconds to find [a-z]{3} match for 8010fd0f87d3aaa0ea48aa78948c081e as No Matches
-Using 4 threads it took 15.51 seconds to find [a-z]{3} match for 8010fd0f87d3aaa0ea48aa78948c081e as No Matches
-Using 4 threads it took 15.94 seconds to find [a-z]{3} match for 8010fd0f87d3aaa0ea48aa78948c081e as No Matches
-Using 4 threads it took 17.57 seconds to find [a-z]{3} match for 8010fd0f87d3aaa0ea48aa78948c081e as No Matches
-Using 4 threads it took 15.95 seconds to find [a-z]{3} match for 8010fd0f87d3aaa0ea48aa78948c081e as No Matches
-Using 4 threads it took 15.96 seconds to find [a-z]{3} match for 8010fd0f87d3aaa0ea48aa78948c081e as cmc
-Using 4 threads it took 15.77 seconds to find [a-z]{3} match for 8010fd0f87d3aaa0ea48aa78948c081e as cmc
-Using 12 threads it took 7.98 seconds to find [a-z]{3} match for 8010fd0f87d3aaa0ea48aa78948c081e as cmc
+threads			password		match	regex		time
+2	9e830efe36727fb1fc8e80b0c4adcc47	ANNA	ANN[A-F]{1}	2.64
+2	24ae6698fce4b27f75074044256ef657	NONE	ANN[A-F]{1}	2.69
+2	2752a973cc9f11bbada44cccbee6242d	NONE	ANN[A-F]{1}	2.71
+2	655c9c6c197bb197521cde7e771fda83	NONE	ANN[A-F]{1}	2.76
+threads			password		match	regex		time(s)
+  2	9e830efe36727fb1fc8e80b0c4adcc47	ANNA	ANN[A-F]{1}	2.62
+  2	24ae6698fce4b27f75074044256ef657	NONE	ANN[A-F]{1}	2.67
+  2	2752a973cc9f11bbada44cccbee6242d	NONE	ANN[A-F]{1}	2.69
+  2	655c9c6c197bb197521cde7e771fda83	NONE	ANN[A-F]{1}	2.76
+threads		encrypted password			match	regex		time(s)
+  2	9e830efe36727fb1fc8e80b0c4adcc47	ANNA	ANN[A-F]{1}	2.57
+  2	24ae6698fce4b27f75074044256ef657	NONE	ANN[A-F]{1}	2.65
+  2	2752a973cc9f11bbada44cccbee6242d	NONE	ANN[A-F]{1}	2.7
+  2	655c9c6c197bb197521cde7e771fda83	NONE	ANN[A-F]{1}	2.72
+threads		encrypted password		match	regex		time(s)
+  2		9e830efe36727fb1fc8e80b0c4adcc47	ANNA	ANN[A-F]{1}	2.63
+  2		24ae6698fce4b27f75074044256ef657	NONE	ANN[A-F]{1}	2.7
+  2		2752a973cc9f11bbada44cccbee6242d	NONE	ANN[A-F]{1}	2.74
+  2		655c9c6c197bb197521cde7e771fda83	NONE	ANN[A-F]{1}	2.78
+threads		encrypted password			match	regex		time(s)
+  2		9e830efe36727fb1fc8e80b0c4adcc47	ANNA	ANN[A-F]{1}	2.61
+  2		24ae6698fce4b27f75074044256ef657	NONE	ANN[A-F]{1}	2.65
+  2		2752a973cc9f11bbada44cccbee6242d	NONE	ANN[A-F]{1}	2.71
+  2		655c9c6c197bb197521cde7e771fda83	NONE	ANN[A-F]{1}	2.72
