@@ -35,6 +35,7 @@ for line in f:
   # errors could occur in the dat file that lead to misinterpretations
   if(len(line.split('\t')) == len(headers)):
     data = line.split('\t')
+    dinoframe.append(data)
   # if it's ok, we add the line to the dataframe
 # don't forget to close the file object
 

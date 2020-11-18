@@ -35,14 +35,13 @@ class m2aTest(unittest.TestCase):
     dino = dinodata()
     plot2, age2 = dino.readdinos([33.786594,-118.298662, 'Glendale','CA'],2)
     plotDinos2 = mapmake2.plotDinos([33.786594,-118.298662, 'Glendale','CA'],plot2,2,age2)
-    map2 = '46556_1.png'
+    map2 = '91210_2.png'
     map2 = mpimg.imread(map2)
  
-    test = 'test.png'
+    test = 'maptest1.png'
     test1 = mpimg.imread(test)
-    test = 'test2.png'
+    test = 'maptest2.png'
     test2 = mpimg.imread(test)
-    print(test1)
 
     self.assertEqual(test1.all(), map1.all())
     self.assertEqual(test2.all(), map2.all())
