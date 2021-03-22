@@ -124,19 +124,3 @@ where cfb_game_stats.game_id=cfb_game.game_id
 group by name, year 
 order by att desc 
 limit 5;
-
-select distinct QB.first_name as 'QB first name', QB.last_name as 'QB last name', 
-  WR.first_name as 'WR first name', WR.last_name as 'WR last name', 
-    Q.yards, A.period,T.name, O.name as opponent, year(G.game_date) as year
-from cfb_play A, cfb_player QB, cfb_player WR, cfb_game G, cfb_team T, cfb_team O, cfb_pass Q
-where Q.game_id = A.game_id
-  and G.game_id = A.game_id
-  and Q.play_number = A.play_number
-  and QB.player_id = Q.passer_player_id
-  and WR.player_id = Q.receiver_player_id
-  and Q.completion = 1
-  and QB.team_id = T.team_id
-  and O.team_id = G.home_team_id | G.visit_team_id != 'Notre Dame'
-  and T.name = "Notre Dame"
-order by Q.yards desc, year
-limit 10;
